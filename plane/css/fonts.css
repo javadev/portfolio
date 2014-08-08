@@ -1,0 +1,8 @@
+@font-face {
+    font-family: Myriad pro; /* Гарнитура шрифта */
+    src: url(../fonts/MYRIADPRO-SEMIBOLD.OTF); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: Segoe Print; /* Гарнитура шрифта */
+    src: url(../fonts/SEGOEPRB.TTF); /* Путь к файлу со шрифтом */
+}

@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ru-RU">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/flipclock.css">	
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css">	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0"/>
+	<meta http-equiv="cleartype" content="on"/>
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="js/flipclock.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/async.js"></script>
+    <script type="text/javascript" src="js/jquery.form.js"></script>
+
+	<title>Инвест-проект</title>
+</head>
+
+<body onresize="setSizeOfFeedbacks();">
+	<div id="date" style="display:none;">9 August 2014 10:12</div>
+	<div id="popup" class="popup">
+		<div class="window">
+			<h2>Заявка на кредит</h2>
+			<form method="post" id="popupForm" action="mail.php">
+				<input name="name" type="text" value="" placeholder="Как к Вам обращаться?">
+				<input name="tel"  type="text" value="" placeholder="Ваш телефон?">
+				<input type=submit class="botton send submit" value="Отправить заявку">
+			</form>
+		</div>
+	</div>
+	<section class="first">
+		<header class="head">
+			<div class="logo">
+				<a href=""><img src="img/logo.png" alt="logo"></a>
+				<span>Быстрый и выгодный кредит в Москве
+поможем получить без предоплат </span>
+			</div>
+			<aside class="callback">
+				<span class="tel">+7 (495) 798 47 40</span>
+				<span class="mail">info@kredit-pro.ru</span>
+				<span class="adress">г. Москва, <br>
+					ул. Земляной Вал, <br>
+					д. 50А/8, стр.2, офис № 113</span>
+				<div>
+					<a class="botton green" href="javascript:showPopup();">Заказать звонок</a>
+				</div>
+			</aside>
+		</header>		
+		<div class="wrapper">
+		<aside class="request">
+			<h3 class="red stroke">Акция</h3>
+			<div class="requestInner">
+				<div class="top">
+					<h5 class="white">Оставьте заявку сейчас и получите бесплатную проверку кредитной истории </h5>
+				</div>
+				<div class="main">
+					<h5>До конца акции осталось</h5>
+					<div class="clock" id="clock-top"></div>
+					<form  id="form-top" method="post" action="mail.php" >
+						<input name="name" value="" placeholder="Как к Вам обращаться?">
+						<input name="tel"  value="" placeholder="Ваш телефон?">
+						<input type=submit class="botton send submit" value="Отправить заявку">
+					</form>
+				</div>
+				
+
+			</div>
+		</aside>
+		<div class="select">
+			<h1 class="white">Помощь в срочном получении кредита</h1>
+			<div id="slider"></div>
+			<div class="sum">
+				<span class="left white">50 000</span>
+				<span class="right white">3 000 000</span>
+				<span class="white" id="current">50000</span>
+			</div>
+			
+		</div>
+		<a class="botton credit" href="javascript:showPopup();">ОФОМИТЬ КРЕДИТ</a>
+		<div class="clear"></div>
+		</div>
+	</section>
+	<section class="second">
+		<ol class="advantage">
+			<li>Более трех лет на рынке кредитования</li>
+			<li>На нас работают профессионалы с многолетним опытом</li>
+			<li>Подача заявок в лидирующие банки на рынке кредитования</li>
+			<li>Мы не задаем лишних вопросов! Наша задача получить от Вас только нужную для оформления кредита информацию</li>
+			<li>Мы подберем для вас оптимальные условия кредитования </li>
+		</ol>
+		<a class="consult" href="">Консультация</a>
+	</section>
+	<section class="third">
+		<h1 class="black">Наши партнеры</h1>
+		<div class="partners"></div>
+		<div class="clear"></div>
+	</section>
+	<section class="fourth">
+		<h1 class="black upper">Виды кредитования</h1>
+		<div class="types">
+			<div>
+				<div class="type ">
+					<div class="img">
+						<img src="img/portmone.png">
+						<div class="hover"></div>
+					</div>
+					<span class="sign">Потребительские кредиты</span>
+				</div>
+				<div class="type">
+					<div class="img">
+						<img src="img/bag.png">
+						<div class="hover"></div>
+					</div>
+					<span class="sign">Кредиты для малого и среднего бизнеса</span>
+				</div>
+				<div class="type ">
+					<div class="img">
+						<img src="img/house.png">
+						<div class="hover"></div>
+					</div>
+					<span class="sign">Под залог недвижимости</span>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div>
+				<div class="type ">
+					<div class="img">
+						<img src="img/card.png">
+						<div class="hover"></div>
+					</div>
+					<span class="sign">Кредитные карты</span>
+				</div>
+				<div class="type ">
+					<div class="img">
+						<img src="img/key.png">
+						<div class="hover"></div>
+					</div>
+					<span class="sign">Ипотека</span>
+				</div>
+				<div class="type ">
+					<div class="img">
+						<img src="img/truck.png">
+						<div class="hover"></div>
+					</div>
+					<span class="sign">Автокредиты</span>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+
+		</div>
+		<a class="botton orange" href="javascript:showPopup();">Получить кредит</a>
+	</section>
+	<section class="fifth">
+		<h1 class="black">Почему более 1000 клиентов выбрали нас</h1>
+		<ul class="money">
+			<li class="percent">Ставка от 11% годовых</li>
+			<li class="hands">Абсолютно прозрачная работа</li>
+			<li class="diagram">Мы разбираемся в бизнес процессах</li>
+			<li class="man">С нами быстро и выгодно получаете деньги</li>
+			<li class="paper">Сформируем для Вас эфективный пакет документов </li>
+			<li class="bank">У нас есть хорошие партнерские отношения со многими банками</li>
+		</ul>
+	</section>
+	<section class="sixth">
+		<h1 class="black stroke">Как мы работаем</h1>
+		<div class="features">
+			<div class="feature card"><span>Вы оставляете заявку</span></div>
+			<div class="feature man"><span>Наш финансовый специалист грамотно консультирует Вас</span></div>
+			<div class="feature paper"><span>Мы эффективно подготавливаем Ваш пакет документов и отправляем его в банк</span></div>
+			<div class="feature money"><span>Вы получаете свои деньги</span></div>
+			<div class="arrows">
+				<div class="arrow"></div>
+				<div class="arrow down"></div>
+				<div class="arrow"></div>
+			</div>
+		</div>
+		<h2 class="white">Наши специалисты подберут для Вас только те банки, в которых Вы с наибольшей вероятностью получите кредит!</h2>
+		<a class="botton credit" href="javascript:showPopup();">ОФОМИТЬ КРЕДИТ</a>
+	</section>
+	<section class="seventh">
+		<h1 class="black upper">отзывы наших клиентов</h1>
+		<div class="feedbacks">			
+			<div class="feedback" id="feedback-1">
+				<div class="circle"><img alt="photo" src="img/poc-1.png"></img></div>
+				<h4 class="name upper">Роман Фролов</h4>
+				<span class="upper">собственник бизнеса</span>
+				<p class="upper">	В начале весны, мне срочно срочно понадобились деньги, для выгодной покупки заграничного сырья. Я обошел четыре крупных банка и мне поступали отказы. Скажу честно, что поход к кредитному брокеру для меня было очень не легким решением, но, когда я пришел в компанию Инвест-Проект, меня встретили очень тепло и с профессиональным подходом, вы знаете, они оказались мастерами своего дела, они обеспечили нужную мне сумму, да и еще в короткие сроки. Я благодарен этой компании за профессиональную помощь в достижении моей цели.					
+				</p>
+			</div>
+			<div class="feedback" id="feedback-2">
+				<div class="circle"><img alt="photo" src="img/baba-2.png"></img></div>
+				<h4 class="name upper">Алла Просова</h4>
+				<span class="upper">Работник по найму</span>
+				<p class="upper">  Решила я взять кредит, обратилась в пару банков,в которые предоставила весь комплект документов, просрочек у меня не было, 3 дня прождала решения везде отказ, а деньги нужны были еще вчера, сидела в интернете увидела рекламу Инвест-Проекта, позвонила по телефону ответил молодой человек, говорит что смогут решить мою проблему буквально за 2 дня, ну я конечно ему сразу не поверила, потому что, уже была наслышенна о подобных организациях, но я, все равно приехала к ним на встречу, менеджер Максим приятно меня удивил, мне даже в банк пришлось ехать только за получением денег, и за услуги они взяли 10%, спасибо Инвест-Проекту за их честность и порядочность, они оказались хорошими финансистами, и решили мою проблему.
+				</p>
+			</div>
+			<div class="feedback" id="feedback-3">
+				<div class="circle"><img alt="photo" src="img/poc-3.png"></img></div>
+				<h4 class="name upper">Владимир Мухин</h4>
+				<span class="upper">Ипотека</span>
+				<p class="upper">	Здесь мне помогли быстро и на выгодных условиях получить хороший ипотечный кредит, я обошел кучи банков, плюс ко всему я ничего не понимаю во всех этих документациях. Пришел в Инвест-Проект мне сразу указали на те проблемы которые у меня были, менеджер даже, подобрал мне более лучший вариант по покупки жил площади, для начало взяли с меня 2 документа, я с начало подумал бред какой то, повторяю брал я ипотечный кредит, уже завтра мне звонили из банка, через еще 1 день мне одобрили мою долгожданную ипотеку, взял 2ндфл и копию трудовой и в банк! Спасибо вам Инвест-Проект, теперь я не снимаю квартиру а живу в своей собственной!!!
+				</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</section>
+	<section class="eighth">
+		<h1 class="black upper">Как нас найти</h1>
+		<div class="map">
+			<span class="map">г. Москва, м. Курская, ул. Земляной Вал, д. 50А/8, стр.2, офис № 113</span>
+			<!--script type="text/javascript" charset="utf-8" src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid=wtNUMLE1OzeUR0IeZXnWrrWwUp8u3RcR&width=800&height=450"></script-->
+		</div>
+		<aside class="request">
+			<h3 class="stroke">Акция</h3>
+			<div class="requestInner">
+				<div class="top">
+					<h5 class="white">Оставьте заявку сейчас и получите бесплатную проверку кредитной истории </h5>
+				</div>
+				<div class="main">
+					<h5>До конца акции осталось</h5>
+					<div class="clock" id="clock-bot"></div>
+					<form id="form-bot" method="post" action="mail.php">
+						<input name="name" value="" placeholder="Как к Вам обращаться?">
+						<input name="tel"  value="" placeholder="Ваш телефон?">
+						<input type=submit class="botton send submit" value="Отправить заявку">
+					</form>
+				</div>		
+
+			</div>
+		</aside>
+		<div class="clear"></div>
+		<div class="photos">
+			<img class="photo" alt="photo" src="img/photo-1.png"></img>
+			<img class="photo" alt="photo" src="img/photo-2.png"></img>
+			<img class="photo" alt="photo" src="img/photo-3.png"></img>
+
+		</div>
+	</section>
+	
+	<!-- Start SiteHeart code 
+	<script>
+		(function(){
+		var widget_id = 711289;
+		_shcp =[{widget_id : widget_id}];
+		var lang =(navigator.language || navigator.systemLanguage 
+		|| navigator.userLanguage ||"en")
+		.substr(0,2).toLowerCase();
+		var url ="widget.siteheart.com/widget/sh/"+ widget_id +"/"+ lang +"/widget.js";
+		var hcc = document.createElement("script");
+		hcc.type ="text/javascript";
+		hcc.async =true;
+		hcc.src =("https:"== document.location.protocol ?"https":"http")
+		+"://"+ url;
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+	</script>
+	<!-- End SiteHeart code -->
+	
+	<div class="copyright">ООО «Инвест Проект» © 2010-2014</div>
+</body>
+</html>

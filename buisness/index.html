@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+<head>
+    <title>Бизнес</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.new.css">
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/scroll.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- saved from url=(0014)about:internet -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-app="board">
+    <section class="container"> 
+    <nav class="top-menu">
+            <a href="#what-buisness" class="menu-item">Какой бизнес?</a>
+            <a href="#why-sell" class="menu-item">Почему продаю?</a>
+            <a href="#price" class="menu-item">Цена бизнеса</a>
+            <a href="#recommendation" class="menu-item">Рекомендация за %</a>
+            <a href="#contacts" class="menu-item">Контакты</a>
+        </nav>       
+        <section class="head">
+            
+            <h1>Перспективный бизнес<br>нишевых магазинов на продажу</h1>
+            <div class="opportunity">
+                <div class="about">Прекрасная возможность<br>выгодно вложить<br>деньги!</div>
+                <div class="features">
+                    <div class="romb" id="romb1"><span>Хотите<br>выгодно<br> инвестировать?</span></div>
+                    <div class="romb" id="romb2"><span>Ищете<br>перспективный<br>бизнес?</span></div>
+                    <div class="romb" id="romb3"><span>Нет<br>времени<br>для создания<br>бизнеса<br>“с нуля”?</span></div>
+                    <div class="romb" id="romb4"><span>Нужен бизнес,<br>который работает<br>“без вас”?</span></div>
+                </div>
+            </div>
+            <div class="video">
+                <iframe width="531" height="304" src="http://www.youtube.com/embed/Ea3kDv8gMOI" frameborder="0" allowfullscreen></iframe>
+                <div ng-controller="orderForm" class="registration">
+                    <h4>Мне интересно ваше предложение</h4>
+                    <form name="order"  novalidate ng-submit="order.$valid && you()" >
+                        <span class="about"><sup>*</sup> - обязательно для заполнения</span>
+                        <input  name="name" required ng-model="user.name" type="text" placeholder="Фамилия Имя">
+                        <div ng-hide="order.name.$dirty" class="star name"><sup >*</sup></div>
+                        <input name="phone" minlength="5" ng-class="isPhoneInvalid() && invalidNumber" maxlength="10" required ng-model="user.phone" type="text" integer placeholder="Телефон">
+                        <div class="star phone" ng-hide="order.phone.$dirty"><sup >*</sup></div>
+                        <input name="mail" required type="email" ng-model="user.mail" placeholder="E-mail" >
+                        <div class="star mail" ng-hide="order.mail.$dirty"><sup >*</sup></div>
+                        <textarea placeholder="Ваше сообщение"></textarea>
+                        <button type="submit">Узнать детальнее</button>
+                    </form>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+        </section>
+        <section class="main">
+            <h2 id="what-buisness">Какой бизнес продается?</h2>
+            <article>                
+                <a class="ad" href=""><img src="img/embargo.png" alt="embargo"></a>
+                <h3><a href="http://embargo.com.ua">Embargo.com.ua</a> /магазин для мужчин/</h3>
+                <div class="article-video">
+                    <iframe width="337" height="190" src="http://www.youtube.com/embed/4gq_80qFpwk" frameborder="0" allowfullscreen></iframe>
+                    <!--video width="320" height="240" controls>
+                      <source src="//www.youtube.com/embed/4gq_80qFpwk" type="video/mp4">
+                      <source src="movie.ogg" type="video/ogg">
+                      Your browser does not support the video tag.
+                    </video-->
+                    <div class="clearfix"></div>
+                    <a href="#" class="button">
+                        Узнать подробнее о<br>
+                        <span>Embargo.com.ua!</span>
+                    </a>
+                </div>
+                <div class="article">
+                    <ul>
+                        <li> Магазин открылся в 2010 году, осенью 2014 года бизнесу будет 4 года. </li>
+                         <li>Лидер рынка продажи табачных товаров через интернет в Украине. </li>
+                         <li> Преимущество магазина - это более 50% повторных покупок от постоянных клиентов. </li>
+                         <li> Клиентами магазина стали более 20 тыс. покупателей. </li>
+                         <li> Магазин “Embargo Shop” - узнаваемый бренд среди любителей табачных товаров. </li>
+                         <li> Cвой офлайн магазин (50 кв.м) с товаром на витринах. </li>
+                         <li> Шоурум находится в ТЦ “Европорт” (г. Киев, ст. м. Вокзальная). </li>
+                         <li> Средняя посещаемость сайта 1500 посетителей/день. </li>
+                    </ul>
+                    <p><span class="bold">Перпектива развития:</span> развитие сети фирменных мужских магазинов под ТМ “Embargo Shop”, начало собственного импорта части товара из Китая и других стран.</p>
+                </div>
+                <div style="clear: both;"></div>
+            </article>
+            <article>
+                <a class="ad" href=""><img src="img/daru.png" alt="daru"></a>
+                <h3><a href="http://daru.com.ua">Daru.com.ua</a> /интернет магазин подарков/</h3>
+                <div class="article-video">
+                    <iframe width="337" height="190" src="http://www.youtube.com/embed/q8Rr9qdLpgk" frameborder="0" allowfullscreen></iframe>
+                    <!--video></video-->
+                    <div class="clearfix"></div>
+                    <a href="#" class="button">
+                        Узнать подробнее о<br>
+                        <span>Daru.com.ua!</span>
+                    </a>
+                </div>
+                <div class="article">
+                    <ul>
+                        <li> Магазин “ДАРЮ” открылся в 2011 году, осенью 2014 года бизнесу будет 3 года.</li>
+                        <li> Входит в ТОП10 интернет магазинов подарков в Украине.</li>
+                        <li> Ассортимент - более 4000 единиц товаров.</li>
+                        <li> Cвой офлайн магазин (50 кв.м) с товаром на витринах.</li>
+                        <li> Шоурум находится в ТЦ “Европорт” (г. Киев, ст. м. Вокзальная).</li>
+                        <li> Средняя посещаемость сайта 1000-1500 посетителей/день.</li>
+                        <li> Бизнесу присущая резкая сезонность, пики продаж в декабре, феврале, марте.</li>
+                    </ul>
+                    <p><span class="bold">Перпектива развития:</span> стать интернет магазином подарков №1, открытие сети фирменных магазинов подарков под ТМ “ДАРЮ”, начало собственного импорта товара из Китая.</p>
+                </div>
+                <div style="clear: both;"></div>
+            </article>
+            <article>
+                <a class="ad" href=""><img src="img/glasko.png" alt="glasko"></a>
+                <h3><a href="http://glasko.com.ua">GLASKO.com.ua</a> /интернет магазин посуды/</h3>
+                <div class="article-video">
+                    <video></video>
+                    <div class="clearfix"></div>
+                    <a href="" class="button">
+                        Узнать подробнее о<br>
+                        <span>GLASKO.com.ua!</span>
+                    </a>
+                </div>
+                <div class="article">
+                    <ul>
+                        <li> Магазин “Гласко” открылся в 2012 году, осенью 2014 года бизнесу будет 2 года.</li>
+                        <li> Входит в пятерку лучших интернет магазинов поcуды в Украине.</li>
+                        <li> Ассортимент - более 8000 единиц товаров.</li>
+                        <li> Cвой офлайн магазин (50 кв.м) с товаром на витринах.</li>
+                        <li> Шоурум находится в ТЦ “Европорт” (г. Киев, ст. м. Вокзальная).</li>
+                    </ul>
+                    <p><span class="bold">Перпектива развития:</span> стать интернет магазином посуды №1, открытие сети фирменных магазинов посуды под ТМ “Glasko”, начало собственного импорта товара из Китая и запуск. франчайзингового развития бизнеса.</p>
+                </div>
+                <div style="clear: both;"></div>
+            </article>
+            <article>
+                <h2 id="why-sell">Почему продаю?</h2>
+                <div class="article">
+                    <p>Большинство бизнесов в Украине продается по причинам “надоело”, “устал”, “прибыли нет” и так далее… В моем случае картина существенно другая, почему? - читайте дальше.</p> 
+                    <p>Паралельно з развитием магазинов “Embargo Shop”, “DARU”, “Glasko” я с 2011 года развиваю свой бизнес в садовой сфере, на сегодняшний день у меня свой садовый центр в Киеве и лучший интернет магазин растений и садовых товаров в Украине.</p> 
+                    <p>Чтобы успешно развиваться дальше настал момент определяться. Бизнесы выросли и чем дальше тем сложнее стало разрываться и эффективно развивать все вместе дальше.</p>                     
+                    <p>Я решил, что более интересным для меня есть будущее развитие садового центра и создание сети современных садовых центров в Украине.</p>                     
+                    <p>Поэтому я ищу достойного покупателя своих магазинов “Embargo Shop”, “DARU”, “Glasko”, который сможет успешно продолжить дальнейшее развитие.</p>
+                </div>
+                <div class="article-video">
+                    <!--video></video-->
+                    <iframe width="337" height="190" src="http://www.youtube.com/embed/xyQvyL1C66I" frameborder="0" allowfullscreen></iframe>
+                    <div class="clearfix"></div>
+                    <a href="" class="button">
+                        Получить презентацию
+                    </a>
+                </div>
+                <div style="clear: both;"></div>
+            </article>
+        </section>
+        <section class="prices">
+            <h2  id="price" class="orange">Цена бизнеса</h2>
+            <table cols='2'>
+                <tr><td><img src="img/embargo.png" alt="embargo"> <br>интернет магазин подарков</td><td class="price">$235 000</td></tr>
+                <tr><td><img src="img/daru-small.png" alt="daru"><br>интернет магазин подарков</td><td class="price">$65 000</td></tr>
+                <tr><td><img src="img/glasko.png" alt="glasko"><br>интернет магазин посуды</td><td class="price">$65 000</td></tr>
+                <tr><td colspan="2"><div class="separator"></div></td></tr>
+            </table>
+            <table cols="2">
+                <tr><td><span class="orange all">Все вместе</span></td><td class="price line">$365 000<br><span class='orange'>$292 000</span></td></tr>
+            </table>
+        </section>
+        <section id="recommendation" class="recommendation">
+            <h2>Порекомендовать покупателя</h2>
+            <p>Тому, кто посоветует покупателя - готов выплатить вознаграждение за рекомендацию. Если Вы посоветуете покупателя, с которым мы договоримся о продаже/покупке магазина(ов) - можете рассчитывать на вознаграждение в 5% от суммы сделки (получается от 3 до 18 тыс $).</p>
+            <a class="button" href="">Я знаю, кому можно продать!</a>
+        </section>
+        <section class="contacts">
+            <h2 id="contacts">Контакты владельца</h2>
+            <div class="info">
+                <img src="img/photo.png" alt="photo">
+                <div class="call">
+                    <h6 class="orange">Алексей</h6>
+                    <span>Звоните:</span><span class="phone"> 067 861 99 88</span><br>
+                    <span>Пишите:</span><span class="mail"> odazon@gmail.com</span>
+                </div>            
+            </div>
+        
+                 <div ng-controller="orderForm" class="registration">
+                    <h4>Отпрвать сообщение</h4>
+                    <form name="order"  novalidate ng-submit="order.$valid && you()" >
+                        <span class="about"><sup>*</sup> - обязательно для заполнения</span>
+                        <input  name="name" required ng-model="user.name" type="text" placeholder="Фамилия Имя">
+                        <div ng-hide="order.name.$dirty" class="star name"><sup >*</sup></div>
+                        <input name="phone" minlength="5" maxlength="10" required ng-model="user.phone" type="text" ng-class="isPhoneInvalid() && invalidNumber" placeholder="Телефон">
+                        <div class="star phone" ng-hide="order.phone.$dirty"><sup >*</sup></div>
+                        <input name="mail" required type="email" ng-model="user.mail" placeholder="E-mail" >
+                        <div class="star mail" ng-hide="order.phone.$dirty"><sup >*</sup></div>
+                        <textarea placeholder="Ваше сообщение"></textarea>
+                        <button type="submit">Отправить</button>
+                    </form>
+                </div>
+            
+            <div style="clear: both;"></div>
+        </section>
+    </section>
+
+</body>
+</html>

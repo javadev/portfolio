@@ -1,0 +1,12 @@
+@font-face {
+    font-family: Segoe UI; /* Гарнитура шрифта */
+    src: url(../fonts/SEGOEUI_1.ttf); /* Путь к файлу со шрифтом */
+   }
+@font-face {
+    font-family: Segoe UI Light; /* Гарнитура шрифта */
+    src: url(../fonts/SEGOEUIL_1.ttf); /* Путь к файлу со шрифтом */
+   }
+@font-face {
+    font-family: Segoe UI Semibold; /* Гарнитура шрифта */
+    src: url(../fonts/SEGUISB.ttf); /* Путь к файлу со шрифтом */
+   }

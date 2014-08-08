@@ -1,0 +1,535 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"img",
+				"img	Tag"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"fot",
+				"font-family"
+			],
+			[
+				"rela",
+				"relative"
+			],
+			[
+				"a",
+				"after"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"paddi",
+				"padding-bottom"
+			],
+			[
+				"ma",
+				"meta	Tag"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"g",
+				"Gudea"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
+				"FUNC",
+				"function"
+			],
+			[
+				"vLID",
+				"validErr"
+			],
+			[
+				"new",
+				"newTaskTitle"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"me",
+				"meta	Tag"
+			],
+			[
+				"add",
+				"addOne"
+			],
+			[
+				"V",
+				"Views"
+			],
+			[
+				"func",
+				"function"
+			],
+			[
+				"Vie",
+				"View"
+			],
+			[
+				"Vi",
+				"View"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"fo",
+				"form	Tag"
+			],
+			[
+				"de",
+				"destroy"
+			],
+			[
+				"functi",
+				"function"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"num",
+				"Numbers"
+			],
+			[
+				"s",
+				"span	Tag"
+			],
+			[
+				"l",
+				"li	Tag"
+			],
+			[
+				"u",
+				"ul	Tag"
+			],
+			[
+				"spa",
+				"span	Tag"
+			],
+			[
+				"b",
+				"bottom"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"font-fa",
+				"font-family"
+			],
+			[
+				"size",
+				"font-size"
+			],
+			[
+				"lin",
+				"link	Tag"
+			],
+			[
+				"ove",
+				"overflow"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"rel",
+				"relative"
+			],
+			[
+				"sc",
+				"script	Tag"
+			],
+			[
+				"top",
+				"topMenuRight"
+			],
+			[
+				"tasks",
+				"tasksView"
+			],
+			[
+				"Tas",
+				"TasksView"
+			],
+			[
+				"templa",
+				"template"
+			],
+			[
+				"template",
+				"templatePerson"
+			],
+			[
+				"col",
+				"collection"
+			],
+			[
+				"peopl",
+				"peopleCollection"
+			],
+			[
+				"Peo",
+				"PeopleView"
+			],
+			[
+				"people",
+				"People"
+			],
+			[
+				"tem",
+				"template"
+			],
+			[
+				"peop",
+				"PeopleCollection"
+			],
+			[
+				"e",
+				"extend"
+			],
+			[
+				"p",
+				"post"
+			],
+			[
+				"Wi",
+				"widget"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"js",
+				"js"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Apache24/htdocs/verstka/fabrique/index.htm",
+			"settings":
+			{
+				"buffer_size": 10567,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 6042,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Apache24/htdocs/verstka/fabrique/css/main.css",
+			"settings":
+			{
+				"buffer_size": 4518,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "$(function(){	\n	window.App = {\n		Models:{},\n		Views:{},\n		Collections:{}\n	};\n\n	App.Models.Task = Backbone.Model.extend({\n		defaults: {\n			priority:5,\n			task:'работать'\n		},\n		events:{\n			'invalid':'validErr'\n		},\n		validErr: function(err){\n			console.log('ошибка');\n			alert(this.validationError);\n		},\n		validate: function(attrs){\n			if(!$.trim(attrs.task)){\n				console.log('ошибка');\n				return 'Ошибка валидации';\n			}\n		}\n	});\n\n	App.Collections.TaskCollection = Backbone.Collection.extend({\n		model:App.Models.Task,\n		events:{\n			'add':'this.model.validate'\n		}\n	});\n\n	App.Views.TaskView = Backbone.View.extend({\n		tagName: 'li',\n		template: _.template('<%= task %> <button class=\"edit\">edit</button> <button class=\"delete\">delete</button>'),\n		initialize: function(){\n			this.model.on('change',this.render,this);\n			this.model.on('destroy',this.remove,this);\n		},\n		remove: function(){\n			this.$el.remove();\n			return this;\n		},\n		render : function(){\n			this.$el.html(this.template(this.model.toJSON()));\n			return this;\n		},\n		events :{\n			'click .edit' : 'editTask',\n			'click .delete' : 'destroy'\n		},\n		destroy: function(){\n			this.model.destroy();\n		},\n		editTask: function(){\n			var str = prompt('введите новое название',this.model.get('task'));\n			/*if(str)*/\n				this.model.set('task', str ,{validate:true});\n			return this;\n		}\n	});\n	App.Views.AddTaskView = Backbone.View.extend({\n		el: '#addTask',\n		events: {\n			'submit': 'submit'\n		},\n		submit: function(evt){\n			evt.preventDefault();\n			var newTaskTitle = this.$el.find('input[type=text]').val();			\n				window.tasksCollection.add({\n					task: newTaskTitle\n			   	\n			});\n		},\n		initialize: function() {\n			console.log(this.el.innerHTML);\n		}\n	});\n	App.Views.TasksView = Backbone.View.extend({\n		tagName : 'ul',\n		initialize : function(){\n			this.collection.on('add',this.addOne,this);\n		},\n		render: function (){\n			this.collection.each(this.addOne,this);\n			return this;\n		},\n		addOne: function(mod){\n			var singleTask = new App.Views.TaskView({model:mod});\n			this.$el.append(singleTask.render().el);\n		}\n	});\n\n	window.tasksCollection = new App.Collections.TaskCollection([\n			{\n				task: 'учиться',\n				priority: 1\n			},\n			{\n				task: 'бездельничать',\n				priority: 3\n			},\n			{\n				task: 'спать',\n				priority: 2\n			},\n		]);\n	var tasksView = new App.Views.TasksView({collection: tasksCollection});\n	$('.listDisplay').html(tasksView.render().el);\n	//$(document).ready(function(){\n		//$('.listDisplay').html(tasksView.render().el);\n	//})\n	var addTaskView = new App.Views.AddTaskView({collection: tasksCollection});\n});",
+			"file": "/C/Apache24/htdocs/backbone/js/main2.js",
+			"file_size": 2785,
+			"file_write_time": 130427234012733035,
+			"settings":
+			{
+				"buffer_size": 2593,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Apache24/htdocs/backbone/index.html",
+		"/C/Apache24/htdocs/verstka/blog/index.html",
+		"/C/Apache24/htdocs/backbone/2048/style.css",
+		"/C/Apache24/htdocs/backbone/js/routers.js",
+		"/C/Apache24/htdocs/backbone/2048/index.html",
+		"/C/Apache24/htdocs/backbone/2048/main.js",
+		"/C/Apache24/htdocs/backbone/js/main2.js",
+		"/C/Apache24/htdocs/backbone/js/main.js",
+		"/C/Apache24/htdocs/verstka/psd(raira)/index.html",
+		"/C/Apache24/htdocs/verstka/psd(raira)/css/style.css",
+		"/C/Apache24/htdocs/verstka/blog/css/style.css",
+		"/C/Apache24/htdocs/verstka/blog/js/main.js",
+		"/C/Apache24/htdocs/backbone/public_html/index.html",
+		"/C/Apache24/htdocs/backbone/public_html/js/main.js"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"text",
+			"header",
+			"heder",
+			"4",
+			"info"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Apache24/htdocs/verstka/fabrique/index.htm",
+					"settings":
+					{
+						"buffer_size": 10567,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								79,
+								57
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 6042,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								6042
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Apache24/htdocs/verstka/fabrique/css/main.css",
+					"settings":
+					{
+						"buffer_size": 4518,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2731.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Apache24/htdocs/backbone/js/main2.js",
+					"settings":
+					{
+						"buffer_size": 2593,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1634,
+								1634
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 698.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

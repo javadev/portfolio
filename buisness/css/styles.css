@@ -1,0 +1,535 @@
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+a {
+  color: #fe6001;
+  text-decoration: none;
+}
+section {
+  padding: 20px;
+}
+.container {
+  width: 1000px;
+  padding: 0;
+  margin: 0 auto;
+}
+/*head section*/
+nav {
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.head {
+  background: url(../img/bg-1.png) 0 0 no-repeat;
+  background-size: contain;
+  padding: 15px;
+}
+.menu-item {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Segoe UI Light', arial, sans-serif;
+  font-size: normal;
+  font-weight: normal;
+  color: #808080;
+  margin: 0 20px;
+  display: inline-block;
+}
+h1 {
+  font-family: 'Segoe UI Semibold', arial, sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: #141414;
+  text-align: center;
+  text-transform: uppercase;
+  width: 80%;
+  line-height: 47px;
+  margin: 30px auto;
+}
+nav {
+  width: 100%;
+  text-align: center;
+}
+.opportunity {
+  margin: 30px 0;
+}
+.opportunity .about {
+  font-family: 'Segoe UI Light', arial, sans-serif;
+  font-size: 30px;
+  font-weight: lighter;
+  color: #fe6001;
+  width: 37%;
+  display: inline-block;
+}
+.features {
+  display: inline-block;
+  font-family: 'Segoe UI Light', arial, sans-serif;
+  font-size: 15px;
+  font-weight: lighter;
+  color: #000000;
+  width: 60%;
+}
+.romb {
+  width: 140px;
+  height: 140px;
+  display: block;
+  float: left;
+  position: relative;
+  background: url('../img/romb-bg.png');
+  background-size: contain;
+}
+.romb span {
+  text-align: center;
+  display: block;
+  line-height: 20px;
+  width: 90%;
+  margin: 10px auto;
+  cursor: default;
+}
+.romb:hover {
+  background-image: url('../img/romb-bg-hover.png');
+}
+#romb1 {
+  top: 46px;
+  padding-top: 18px;
+}
+#romb2 {
+  right: 30px;
+  padding-top: 28px;
+}
+#romb3 {
+  top: 38px;
+  right: 50px;
+  padding-top: 5px;
+}
+#romb4 {
+  top: -15px;
+  right: 80px;
+  padding-top: 34px;
+}
+.lower {
+  position: relative;
+  top: 50px;
+  right: 30px;
+}
+.offset {
+  left: -60px;
+}
+.video {
+  margin: 70px 0 0;
+}
+video {
+  width: 59%;
+  float: left;
+  display: block;
+  zoom: 1;
+}
+video:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.registration {
+  float: left;
+  display: block;
+  zoom: 1;
+  width: 35%;
+  background-color: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  border: 3px solid #e2e2e2;
+  padding: 15px;
+}
+.registration:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.registration .about {
+  font-family: 'Segoe UI', arial, sans-serif;
+  font-size: 12px;
+  font-weight: 100;
+  color: #8b8b8b;
+  display: block;
+  text-align: right;
+}
+h4 {
+  font-family: 'Segoe UI', arial, sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  color: #050505;
+  text-align: right;
+  margin-bottom: 5px;
+}
+.hide {
+  display: none;
+}
+form {
+  position: relative;
+}
+form .star {
+  position: absolute;
+  z-index: 2;
+}
+form .star.name {
+  left: 285px;
+  top: 20px;
+}
+form .star.phone {
+  left: 285px;
+  top: 55px;
+}
+form .star.mail {
+  left: 285px;
+  top: 90px;
+}
+form input,
+form textarea {
+  position: relative;
+  margin: 5px 0;
+  max-width: 100%;
+  padding: 0 10px;
+  min-height: 30px;
+  display: block;
+  width: 100%;
+  border: 1px solid #e1e1e1;
+  box-shadow: 1px 1px 1px #8a8a8a;
+}
+form input::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder {
+  font-family: 'Segoe UI Light', arial, sans-serif;
+  font-size: 14px;
+  font-weight: 11;
+  color: #cfcdcd;
+}
+form input:-moz-placeholder,
+form textarea:-moz-placeholder {
+  /* Firefox 18- */
+  font-family: 'Segoe UI Light', arial, sans-serif;
+  font-size: 14px;
+  font-weight: 11;
+  color: #cfcdcd;
+}
+form input::-moz-placeholder,
+form textarea::-moz-placeholder {
+  /* Firefox 19+ */
+  font-family: 'Segoe UI Light', arial, sans-serif;
+  font-size: 14px;
+  font-weight: 11;
+  color: #cfcdcd;
+}
+form input:-ms-input-placeholder,
+form textarea:-ms-input-placeholder {
+  font-family: 'Segoe UI Light', arial, sans-serif;
+  font-size: 14px;
+  font-weight: 11;
+  color: #cfcdcd;
+}
+form .ng-dirty.ng-invalid {
+  outline-color: red;
+  border-color: red;
+}
+form .ng-dirty.ng-valid {
+  outline-color: green;
+  border-color: green;
+}
+form button {
+  -webkit-transition: background-color 1s;
+  -moz-transition: background-color 1s;
+  -o-transition: background-color 1s;
+  -ms-transition: background-color 1s;
+  transition: background-color 1s;
+  cursor: pointer;
+  margin: 10px auto;
+  border: none;
+  display: block;
+  text-align: center;
+  background-color: #f37327;
+  box-shadow: inset -1px -1px 3px #8a8a8a;
+  font-family: 'Segoe UI Light', arial, sans-serif;
+  font-size: 17px;
+  font-weight: 100;
+  color: #ffffff;
+  width: 70%;
+  height: 50px;
+}
+form button:hover {
+  background-color: #fe6001;
+}
+form button:active {
+  box-shadow: inset -1px -1px 3px #ffffff, inset 1px 1px 3px #000000;
+}
+sup {
+  color: #f5b300;
+}
+/*main section*/
+.main {
+  background: url('../img/bg-main.png') right top no-repeat;
+  background-size: 45%;
+}
+/*article*/
+article {
+  margin-bottom: 40px;
+}
+h2 {
+  font-family: 'Segoe UI Light', arial, sans-serif;
+  font-size: 60px;
+  font-weight: 100;
+  color: #000000;
+  margin: 50px 0;
+}
+h3 {
+  font-family: 'Segoe UI', arial, sans-serif;
+  font-size: 30px;
+  font-weight: 100;
+  color: inherit;
+  margin: 30px 0 0;
+}
+.bold {
+  font-weight: bold;
+  color: black;
+}
+.article-video {
+  width: 30%;
+  padding: 25px 25px 25px 0;
+  float: left;
+}
+.article-video video {
+  width: 100%;
+  height: 200px;
+}
+.article-video .button {
+  padding: 15px;
+  line-height: 20px;
+}
+.article-video .button span {
+  font-size: 1.5em;
+}
+.article {
+  font-family: 'Segoe UI', arial, sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+  color: #808080;
+  line-height: 20px;
+  float: left;
+  padding: 20px 25px;
+  width: 60%;
+}
+p {
+  margin: 20px 0;
+  font-family: 'Segoe UI', arial, sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+  color: #808080;
+}
+/*prices section*/
+.orange {
+  color: #fe6001;
+}
+.prices {
+  background: url(../img/prices-bg.png) 0 100px no-repeat;
+  background-size: 20%;
+}
+table {
+  width: 65%;
+  margin: auto;
+}
+td {
+  vertical-align: top;
+  /*width:80%;*/
+  padding: 20px 0;
+  font-family: 'Segoe UI', arial, sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  color: #000000;
+}
+td img {
+  height: 50px;
+}
+.all {
+  font-size: 42px;
+}
+.separator {
+  background: url(../img/separator.png) 0 0 no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 2px;
+}
+.line:after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 46px;
+  left: 0;
+  background: url(../img/line.png) 0 0 no-repeat;
+  background-size: cover;
+}
+.line:before {
+  content: '';
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: -29px;
+  left: 180px;
+  background: url(../img/discount.png) 0 0 no-repeat;
+  background-size: contain;
+}
+.price {
+  position: relative;
+  line-height: 48px;
+  text-align: right;
+  padding: 20px 10px;
+  width: 30%;
+  font-family: 'Segoe UI', arial, sans-serif;
+  font-size: 39px;
+  font-weight: 100;
+  color: #000000;
+}
+/*recommendation section*/
+.recommendation .button {
+  width: 30%;
+  margin: auto;
+  padding: 20px 15px;
+}
+/*contacts section*/
+.contacts {
+  padding: 50px 20px;
+  background: url(../img/contacts-bg.png) right top no-repeat;
+}
+.contacts h4 {
+  text-align: center;
+  font-family: 'Segoe UI Light', arial, sans-serif;
+  font-size: 27px;
+  font-weight: 100;
+  color: #050505;
+}
+.contacts form .button {
+  width: 50%;
+  padding: 20px;
+}
+.contacts span {
+  font-family: 'Segoe UI Light', arial, sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+  color: #808080;
+}
+.contacts span.phone {
+  font-family: 'Segoe UI Semibold', arial, sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+  color: #000000;
+}
+.contacts span.mail {
+  font-family: 'Segoe UI', arial, sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: #000000;
+}
+h6 {
+  font-family: 'Segoe UI Light', arial, sans-serif;
+  font-size: 29px;
+  font-weight: 100;
+  color: #000000;
+  margin: 10px 0;
+}
+.call {
+  position: absolute;
+  top: 140px;
+  right: 60px;
+}
+.info {
+  position: relative;
+  width: 50%;
+  float: left;
+}
+.info img {
+  width: 40%;
+  display: block;
+}
+/*function and mixins*/
+.flex {
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.button {
+  -webkit-transition: background-color 1s;
+  -moz-transition: background-color 1s;
+  -o-transition: background-color 1s;
+  -ms-transition: background-color 1s;
+  transition: background-color 1s;
+  cursor: pointer;
+  margin: 10px auto;
+  border: none;
+  display: block;
+  text-align: center;
+  background-color: #f37327;
+  box-shadow: inset -1px -1px 3px #8a8a8a;
+  font-family: 'Segoe UI Light', arial, sans-serif;
+  font-size: 17px;
+  font-weight: 100;
+  color: #ffffff;
+}
+.button:hover {
+  background-color: #fe6001;
+}
+.button:active {
+  box-shadow: inset -1px -1px 3px #ffffff, inset 1px 1px 3px #000000;
+}
+.placehollder::-webkit-input-placeholder {
+  font-family: 'Segoe UI Light', arial, sans-serif;
+  font-size: 14px;
+  font-weight: 11;
+  color: #cfcdcd;
+}
+.placehollder:-moz-placeholder {
+  /* Firefox 18- */
+  font-family: 'Segoe UI Light', arial, sans-serif;
+  font-size: 14px;
+  font-weight: 11;
+  color: #cfcdcd;
+}
+.placehollder::-moz-placeholder {
+  /* Firefox 19+ */
+  font-family: 'Segoe UI Light', arial, sans-serif;
+  font-size: 14px;
+  font-weight: 11;
+  color: #cfcdcd;
+}
+.placehollder:-ms-input-placeholder {
+  font-family: 'Segoe UI Light', arial, sans-serif;
+  font-size: 14px;
+  font-weight: 11;
+  color: #cfcdcd;
+}
+.clearfix {
+  display: block;
+  zoom: 1;
+}
+.clearfix:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}

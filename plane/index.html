@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="RU-ru">
+<head>
+    <title>Let's fly</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/flipclock.css">
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/slider.js"></script>
+    <script type="text/javascript" src="js/flipclock.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <!-- saved from url=(0014)about:internet -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]>
+    <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+    </style>
+    <![endif]-->
+</head>
+<body ng-app="plane">
+    <div id="date">22 July 2014 10:12</div>
+    <div id="popup" class="popup">
+        <div class="popupForm" ng-controller="formController">
+            <img src="img/logo.png">
+            <form name="popupForm" ng-submit='popupForm.$valid && !isPhoneInvalid() && you()' novalidate>
+                <input type="text" name='name' ng-model="user.name" placeholder="Ваше имя">
+                <input type="text" minlength="5" maxlength="11" name='phone' ng-class="isPhoneInvalid() && invalidNumber" ng-model="user.phone" placeholder="Ваш телефон" required>
+                <input type="text" name='time' ng-model="user.time" placeholder="Время звонка">
+                <div class="button-wrapper">
+                    <button  id="popupButton" class="button gradient green">Заказать звонок</button>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+    <header>
+        <div class="section-inner">
+            <a href="#"><img class="logo" src="img/logo.png"></a>
+            <div class="callback">
+                <span class="number">+7(495)745-45-76</span>
+                <a class="gradient button green" href="javascript:showPopup(false);">Закажи звонок</a>
+            </div>
+        </div>
+    </header>
+    <section class="gray first">
+        <div class="section-inner">
+            <h1 class="blue">Подари себе небо</h1>
+            <h4>Полеты и пилотаж с трансфером от метро до аэродрома и обратно</h5>
+            <div class="video"></div>
+            <aside class="form-wrapper">
+                <div class="form" ng-controller="formController">
+                    <h5 class="blue">Бесплатный трансфер до аэродрома и обратно</h5>
+                    <h5>До конца акции осталось:</h5>
+                    <div class="timer"></div>
+                    <form name="order" ng-submit='order.$valid && !isPhoneInvalid() && you()' novalidate>
+                        <input type="text" name='name' ng-model="user.name" placeholder="Ваше имя">
+                        <input type="text" minlength="5" maxlength="11" name='phone' ng-class="isPhoneInvalid() && invalidNumber" ng-model="user.phone" placeholder="Ваш телефон" required>
+                        <div class="button-wrapper">
+                            <button class="gradient button purple" ng-click="isPhoneInvalid()" type="submit">Получить бесплатный трансфер</button>
+                        </div>
+                    </form>
+                </div>
+            </aside>            
+        </div>        
+    </section>
+    <section class="white">
+        <div class="section-inner">
+            <h2 class="blue plane">Наши услуги</h2>
+            <h4>Отсчет времени идет с момента высоты 100 м</h4>
+            <div class="clocks clearfix">
+                <div class="clock" id="clock10"></div>
+                <div class="clock" id="clock20"></div>
+                <div class="clock" id="clock30"></div>
+                <!--div class="clearfix"></div-->
+            </div>
+            <span class="service">Стоимость профессиональной фотосъемки - 1000 р.</span>
+            <span class="service">Стоимость видео съемки - 1000 р.</span>
+            <span class="service">Стоимоть управления самолетом в воздухе - 1000 р.</span>
+        </div>
+    </section>
+    <section class="gray">
+        <div class="section-inner">
+            <h2 class="blue">Пакеты услуг</h2>
+            <div class="packages">
+                <div class="package" id="base">Базовый
+                    <div class="about">
+                        К назначенному времени Вы приезжаете на аэродром где Вам проводят инструктаж и Вы заполняете анкету. После чего Мы рассчитываем Вас по номерам и в порядке очереди Вы отправляетесь в полет. Полет длится 10 минут. Отчет времени начинается с набора высоты 100м (?) /уверен???/ После полета Вы можете пообедать в кафе на территории аэродрома*. 
+                        <p>*Дополнительные услуги оплачиваются отдельно</p>
+                    </div>
+                </div>
+                <div class="package" id='standart'>Стандарт
+                    <div class="about">
+                       Мы забираем вас от метро пятницкое шоссе и везем на аэродром где Вам проводят инструктаж и Вы заполняете анкету. После чего Мы рассчитываем Вас по номерам и в порядке очереди Вы отправляетесь в полет. Полет длится 20 минут. (С возможностью разделения на 2 по 10 мин) Отчет времени начинается с набора высоты 100м. Все это время проводится профессиональная фото или видео съемка (на ваш выбор) После полета Вы можете пообедать в кафе на территории аэродрома*.
+                        <p>*Дополнительные услуги оплачиваются отдельно</p>
+                    </div>
+                </div>
+                <div class="package" id='cool'>Полный улет!
+                    <div class="about">
+                        Мы забираем вас с удобного для Вас места*. На аэродроме инструктора проводят инструктаж, вы заполняете анкету и проходите на взлетную полосу. Время полета составляет 30 минут (с возможностью разделения) Отчет времени начинается с набора высоты 100м. Все это время проводится профессиональная фото и видео съемка. После окончания полетов вас будет ждать горячий обед и трансфер, который доставит вас в удобное для вас место*
+                        <p>*В пределах Москвы</p>
+                    </div>
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <button  onclick='showPopup(true)' class="gradient purple button" type="submit">Полетели!</button>
+            </div>
+        </div>
+    </section>
+    <section class="white">
+        <div class="section-inner">
+            <div class="slider-wrapper">
+                <div id="slider-group1341994720" class="slider slider slider_count_5">
+                    <!-- Список радиокнопок - они скрыты -->
+                    <input name="imagetape" id="imagetape1" class="slider__radio" type="radio">
+                    <input name="imagetape" id="imagetape2" class="slider__radio" type="radio">
+                    <input name="imagetape" id="imagetape3" class="slider__radio" type="radio">
+                    <input name="imagetape" id="imagetape4" class="slider__radio" type="radio">
+                    <input name="imagetape" id="imagetape5" class="slider__radio" type="radio">
+                    
+                    <!-- Список слайдов - в них можно помещать картинки и что угодно ещё -->
+                    <div class="slider__item">
+                        <h3>Теперь дорога - наша забота</h3>
+                        <img src="img/slider-image-1.png" alt="road" class="slider__img">
+                    </div>
+                    <div class="slider__item">
+                        <h3>Надежная сисема безопасности</h3>
+                        <img src="img/slider-image-2.png" alt="security system" class="slider__img">
+                    </div>
+                    <div class="slider__item">
+                        <h3>С нами работают только опытные пилоты</h3>
+                        <img src="img/slider-image-3.png" alt="pilots" class="slider__img">
+                    </div>
+                    <div class="slider__item">
+                        <h3>Все полеты только при оптимальных погодных условиях</h3> 
+                        <img src="img/slider-image-4.png" alt="weather" class="slider__img">
+                    </div>
+                    <div class="slider__item">
+                        <h3>Работаем круглый год!</h3> 
+                        <img src="img/slider-image-5.png" alt="full year" class="slider__img">
+                    </div>
+                    
+                    <!-- Контейнер лейблов с цифрами - по клику на них выбирается слайд и отменяется вся анимация -->
+                    <div class="slider__number-list">
+                        <label onclick="javascript:ami_gadget_image_tape_setSlideInIE(this);" data-ami-number="1" class="slider__number" for="imagetape1">
+                            <p class="slider__number-after"></p>
+                        </label>
+                        <label onclick="javascript:ami_gadget_image_tape_setSlideInIE(this);" data-ami-number="2" class="slider__number" for="imagetape2">
+                            <p class="slider__number-after"></p>
+                        </label>
+                        <label onclick="javascript:ami_gadget_image_tape_setSlideInIE(this);" data-ami-number="3" class="slider__number" for="imagetape3">
+                            <p class="slider__number-after"></p>
+                        </label>
+                        <label onclick="javascript:ami_gadget_image_tape_setSlideInIE(this);" data-ami-number="4" class="slider__number" for="imagetape4">
+                            <p class="slider__number-after"></p>
+                        </label>
+                        <label onclick="javascript:ami_gadget_image_tape_setSlideInIE(this);" data-ami-number="5" class="slider__number" for="imagetape5">
+                            <p class="slider__number-after"></p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="gray">
+        <div class="section-inner">
+            <h2 class="blue upper plane">Отзывы наших клиентов</h2>
+            <div class="feedbacks">         
+                <div class="feedback" id="feedback-1">
+                    <div class="circle"><img alt="photo" src="img/poc-1.png"></img></div>
+                    <h6 class="name upper">Андрей Гаврилов</h6>
+                    <p class="upper">Это было круто                
+                    </p>
+                </div>
+                <div class="feedback" id="feedback-2">
+                    <div class="circle"><img alt="photo" src="img/poc-2.png"></img></div>
+                    <h6 class="name upper">Леонид Ашанин</h6>                   
+                    <p class="upper"> Было здорово
+                    </p>
+                </div>
+                <div class="feedback" id="feedback-3">
+                    <div class="circle"><img alt="photo" src="img/baba.png"></img></div>
+                    <h6 class="name upper">Евгения Ежова</h6>
+                    <p class="upper">   Мне понравилось
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </section>
+    <section class="last">
+        <aside class="form-wrapper">
+                <div class="form" ng-controller="formController">
+                    <h5 class="blue">Бесплатный трансфер до аэродрома и обратно</h5>
+                    <h5>До конца акции осталось:</h5>
+                    <div class="timer"></div>
+                    <form name="order" ng-submit='order.$valid && !isPhoneInvalid() && you()' novalidate>
+                        <input type="text" name='name' ng-model="user.name" placeholder="Ваше имя">
+                        <input type="text" minlength="5" maxlength="11" name='phone' ng-class="isPhoneInvalid() && invalidNumber" ng-model="user.phone" placeholder="Ваш телефон" required>
+                        <div class="button-wrapper">
+                            <button  class="gradient purple button" type="submit">Получить бесплатный трансфер</button>
+                        </div>
+                    </form>
+                </div>
+            </aside>
+    </section>
+    <div class="copyright upper">Strict line stydio</div>
+</body>
+</html>
