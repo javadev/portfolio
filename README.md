@@ -3,6 +3,6 @@ portfolio
 Hi. my name is Nikita Meshcheriakov and this is my portfolio
 
 
-For more information cotact me
+Contact me for more information
   email: 6etmah@gmail.com
   phone: +380958831408
