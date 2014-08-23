@@ -1,0 +1,16 @@
+@font-face {
+    font-family: Archive; /* Гарнитура шрифта */
+    src: url(../fonts/Archive typeface.otf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: Days; /* Гарнитура шрифта */
+    src: url(../fonts/Days.otf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: OCRF-L; /* Гарнитура шрифта */
+    src: url(../fonts/OCRF-LightC.otf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: OCRF-R; /* Гарнитура шрифта */
+    src: url(../fonts/OCRF-RegularC.otf); /* Путь к файлу со шрифтом */
+}

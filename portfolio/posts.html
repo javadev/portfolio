@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <title>Mykyta</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:500|Russo+One|Roboto:300,400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <!-- saved from url=(0014)about:internet -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand logo" href="#">Микита</a>
+              <div id="small" class="colors small">
+                <div id="yellow"></div>
+                <div id="green"></div>
+                <div id="orange"></div>
+                <div id="purple"></div>
+                </div>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a class="menu-item" href="#">Главная</a></li>
+                <li><a href="#" class="menu-item">Портфолио</a></li>
+                <li><a href="#" class="menu-item selected">посты</a></li>
+                <li><a href="#" class="menu-item">Обо мне</a></li>
+                <li><a class="menu-item" href="#">Контакты</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+    <section class="container">
+        <div class="col-xs-12">
+            <form class="search" method="get" action="/search" target="_blank">
+                <input name="query" class="placeholder" placeholder="Поиск...">
+                <button id="querysub" type='submit' value=""></button>
+            </form>
+        </div>
+    </section>
+    <h1>Все посты</h1>
+    <section class="container">
+        <article class="col-xs-12">
+            <a href="" class="post-img"><img src="img/posts/code.png"></a>
+            <h3><a href="#">CSS анимация</a></h3>
+            <p>Ещё хотелось бы упомянуть один не маловажный момент: для некоторых браузеров мы будем использовать некие префиксы. Для Firefox используется  -moz-, для Chrome и Safari нужно использовать префикс -webkit.
+            Ну а сейчас переходим к самой интересной части. Давайте рассмотрим все эффекты тени по отдельности, эффектов будет 8.</p>
+            <div class="info">
+                <span class="date yellow">22.02.1995 02:21 pm</span><span class="light"> | </span>
+                <span class="yellow">Просмотров: </span><span class="light count">10</span><span class="light"> | </span>
+                <span class="yellow">Автор: </span><a class="author light" href="#">Микита</a>
+            </div>
+            <a class="button" href="">Далее</a>
+        </article>
+        <article class="col-xs-12">
+            <h3><a href="#">CSS анимация</a></h3>
+            <p>Ещё хотелось бы упомянуть один не маловажный момент: для некоторых браузеров мы будем использовать некие префиксы. Для Firefox используется  -moz-, для Chrome и Safari нужно использовать префикс -webkit.
+            Ну а сейчас переходим к самой интересной части. Давайте рассмотрим все эффекты тени по отдельности, эффектов будет 8.</p>
+            <div class="info">
+                <span class="date yellow">22.02.1995 02:21 pm</span><span class="light"> | </span>
+                <span class="yellow">Просмотров: </span><span class="light count">10</span><span class="light"> | </span>
+                <span class="yellow">Автор: </span><a class="author light" href="#">Микита</a>
+            </div>
+            <a class="button" href="">Далее</a>
+        </article>
+        <article class="col-xs-12">
+            <h3><a href="#">CSS анимация</a></h3>
+            <p>Ещё хотелось бы упомянуть один не маловажный момент: для некоторых браузеров мы будем использовать некие префиксы. Для Firefox используется  -moz-, для Chrome и Safari нужно использовать префикс -webkit.
+            Ну а сейчас переходим к самой интересной части. Давайте рассмотрим все эффекты тени по отдельности, эффектов будет 8.</p>
+            <div class="info">
+                <span class="date yellow">22.02.1995 02:21 pm</span><span class="light"> | </span>
+                <span class="yellow">Просмотров: </span><span class="light count">10</span><span class="light"> | </span>
+                <span class="yellow">Автор: </span><a class="author light" href="#">Микита</a>
+            </div>
+            <a class="button" href="">Далее</a>
+        </article>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                 <div class="page-numbers">
+                    <a class="number" href="#">1</a>
+                    <a class="number" href="#">2</a>
+                    <a class="number" href="#">3</a>
+                    <a class="number" id="next" href="#">></a>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <footer>
+        <section class="container">
+            <div class="row">
+                <div class="col-xs-6">
+                   <!--a href="#" class="logo">Микита</a-->
+                   <div class="socials">
+                        <a id="insta" href="http://instagram.com/betmakh"></a>
+                        <a id="fb" href="http://fb.com/betmanenko"></a>
+                        <a id="twitter" href="http://twitter.com/@betmakh"></a>
+                        <a id="vk" href="http://vk.com/betmanenko"></a>
+                   </div>
+                </div>
+                <div class="col-xs-6 align-right">
+                    <a href="#" class="rss">RSS</a>
+                    <span class="copyright">
+                    Design & develop by Mykyta Meshcheryakov<br>
+                    © 2014 Mykyta’s blog
+                    </span>
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+</html>
